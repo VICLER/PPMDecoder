@@ -23,6 +23,7 @@ void loop() {
   Serial.println();
   delay(10);
 
-  servo.writeMicroseconds(ppm.get(1));  // write PPM value to servo
-  analogWrite(LED, ppm.getPWM(3));     // write PWM value from channel 3 to led
+  //servo.writeMicroseconds(ppm.getServo_us(1)); // write in range from (544 - 2400)us. That is from 0 to 180 degrees. This is much faster than servo.write(0 - 180)
+  servo.writeMicroseconds(ppm.get(1));          // write raw PPM value to servo (1000 - 2000)us
+  analogWrite(LED, ppm.getPWM(3));             // write PWM value from channel 3 to led
 }

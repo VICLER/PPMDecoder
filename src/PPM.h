@@ -12,6 +12,7 @@ public:
 	void begin(uint8_t inputPort);
 	uint16_t get(uint8_t channel);
 	uint8_t getPWM(uint8_t channel);
+	uint16_t getServo_us(uint8_t channel);
 	void increment_ovf_count();
 	bool available();
 	void process();

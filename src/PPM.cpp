@@ -86,6 +86,10 @@ uint8_t PPM::getPWM(uint8_t channel)
 	return (_channels[channel - 1] - MIN_PULSE) * 0.255f;
 }
 
+uint16_t PPM::getServo_us(uint8_t channel){
+	return ( (_channels[channel - 1] - 706.89655) * 1.856 ); // range 0 -> 180 using WriteMicroseconds
+}
+
 bool PPM::available()
 {
 	return _available;
