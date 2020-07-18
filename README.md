@@ -34,8 +34,8 @@ uint16_t getServo_us(CHANNEL_NUMBER);  // get Servo value (0-180)deg for using w
 ```C++
 #include <PPM.h>
 
-#define PPM_PIN 2       // receiver ppm pin
-#define CHANNELS 8     // max ppm channels
+#define CHANNELS 8    // max ppm channels
+#define PPM_PIN 2    // receiver ppm pin
 
 void setup() {
   ppm.begin(PPM_PIN, CHANNELS);
@@ -51,6 +51,6 @@ void loop() {
   }
   Serial.println();
   delay(10);
-  
+
 }
 ```
