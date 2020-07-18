@@ -18,3 +18,25 @@ ppm.get(CHANNEL_NUMBER);            // get channel value in us
 ppm.getPWM(CHANNEL_NUMBER);        // get pwm (0-255) channel value
 ppm.getServo_us(CHANNEL_NUMBER);  // get Servo value (0-180)deg for using with Servo.writeMicroseconds() in range (544-2400)us
 ```
+## Example
+```C++
+#include <PPM.h>
+
+#define PPM_PIN 2       // receiver ppm pin
+#define CHANNELS 8     // max ppm channels
+
+void setup() {
+  ppm.begin(PPM_PIN, CHANNELS);
+  Serial.begin(115200);
+}
+
+void loop() {
+  for (uint8_t i = 1; i <= CHANNELS; i++) // print all channel values
+  {
+    Serial.print(ppm.get(i));
+    Serial.print('\t');
+  }
+  Serial.println();
+  delay(10);
+}
+```
