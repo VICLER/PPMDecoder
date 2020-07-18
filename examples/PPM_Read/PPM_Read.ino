@@ -1,7 +1,8 @@
 #include <PPM.h>
 
-#define PPM_PIN 2       // receiver ppm pin
-#define CHANNELS 8     // max ppm channels
+#define CHANNELS 8   // max ppm channels
+#define PPM_PIN 2   // receiver ppm pin
+
 
 void setup() {
   ppm.begin(PPM_PIN, CHANNELS);
