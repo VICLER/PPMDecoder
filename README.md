@@ -5,11 +5,11 @@
 
 <!-- FEAUTURES -->
 ## Features
-- Small size and easy to use
-- Non-Blocking operation using interrupts
-- Precise resolution of signal measuring (+- 0.5us)
-- Fast PPM to PWM (0-255) and Servo (544-2400us) conversion
-- Compatible with all ATMega328 16Mhz or 8Mhz Arduino boards
+* Small size and easy to use
+* Non-Blocking operation using interrupts
+* Precise resolution of signal measuring (+- 0.5us)
+* Fast PPM to PWM (0-255) and Servo (544-2400us) conversion
+* Compatible with all ATMega328 16Mhz or 8Mhz Arduino boards
 
 ## How to use
 ```C++
