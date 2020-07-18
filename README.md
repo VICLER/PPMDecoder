@@ -1,5 +1,5 @@
 ![PROJECT_PHOTO](https://github.com/VICLER/PPMDecoder/blob/master/ppm_img.PNG)
-# PPMDecoder
+<h1 align="center">PPM Decoder</h1>
  Arduino library for decoding PPM receiver signal
 
 ## Features
