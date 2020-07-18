@@ -23,8 +23,8 @@ void PPM::begin(uint8_t inputPort, uint8_t max_channels = MAX_CHANNELS)
 	_ovf_count = 0;
 	_micros_count = 0;
 
-	TCCR2B = (TCCR2B & 0b11111000) | (1 << CS21); //0x02; // 8 prescaler
-	TIMSK2 |= 0b00000001;				 // enable timer2 overflow interrupt
+	TCCR2B = (TCCR2B & 0b11111000) | (1 << CS21); 	// 0x02; // 8 prescaler
+	TIMSK2 |= 0b00000001;				 		   // enable timer2 overflow interrupt
 	TCCR2A &= 0b11111100;
 	TCCR2B &= 0b11110111;
 }
@@ -37,11 +37,11 @@ uint32_t PPM::_micros()
 	bool flag_save = bitRead(TIFR2, 0);
 	if (flag_save)
 	{
-		tcnt2 = TCNT2;		 //update variable just saved
-		_ovf_count++;		 //force the overflow count to increment
-		TIFR2 |= 0b00000001; //reset Timer2 overflow flag
+		tcnt2 = TCNT2;
+		_ovf_count++;
+		TIFR2 |= 0b00000001;
 	}
-	_micros_count = (_ovf_count << 8) | tcnt2 ; //get total Timer2 count
+	_micros_count = (_ovf_count << 8) | tcnt2 ;
 	SREG = SREG_old;
 #if (F_CPU == 16000000)
 	return _micros_count >> 1;

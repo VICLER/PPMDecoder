@@ -2,9 +2,9 @@
 
 #include "Arduino.h"
 
-#define MAX_CHANNELS 8 // the maximum channel number
-#define MIN_PULSE 1000	  // min valid impulse us
-#define MAX_PULSE 2000	  // max valid impulse us
+#define MAX_CHANNELS 8 	  // the maximum channel number
+#define MIN_PULSE 1000	 // min valid impulse us
+#define MAX_PULSE 2000	// max valid impulse us
 
 class PPM
 {
