@@ -23,8 +23,8 @@ void PPM::begin(uint8_t inputPort, uint8_t max_channels = MAX_CHANNELS)
 	_ovf_count = 0;
 	_micros_count = 0;
 
-	TCCR2B = (TCCR2B & 0b11111000) | (1 << CS21); 	// 0x02; // 8 prescaler
-	TIMSK2 |= 0b00000001;				 		   // enable timer2 overflow interrupt
+	TCCR2B = (TCCR2B & 0b11111000) | (1 << CS21); 	// 8 prescaler
+	TIMSK2 |= 0b00000001;				 		   // enable TIMER2 overflow interrupt
 	TCCR2A &= 0b11111100;
 	TCCR2B &= 0b11110111;
 }
