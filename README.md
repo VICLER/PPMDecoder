@@ -16,9 +16,16 @@
 ```C++
 ppm.begin(PPM_PIN, MAX_CHANNELS);     // init in void setup() // works only with pin 2(PD2) or pin 3(PD3)
 ```
+```C++
 ppm.available();                     // returns 0 if there is no valid pulses from receiver
-ppm.get(CHANNEL_NUMBER);            // get channel value in us 
+```
+```C++
+ppm.get(CHANNEL_NUMBER);            // get channel value in us
+```
+```C++
 ppm.getPWM(CHANNEL_NUMBER);        // get pwm (0-255) channel value
+```
+```C++
 ppm.getServo_us(CHANNEL_NUMBER);  // get Servo value (0-180)deg for using with Servo.writeMicroseconds() in range (544-2400)us
 ```
 ## Example
