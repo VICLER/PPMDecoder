@@ -16,14 +16,7 @@ void setup() {
 }
 
 void loop() {
-  for (uint8_t i = 1; i <= CHANNELS; i++) { // list all channel values beginning from 1
-    Serial.print(ppm.get(i));
-    Serial.print('\t');
-  }
-  Serial.println();
-  delay(10);
-
-  //servo.writeMicroseconds(ppm.getServo_us(1)); // write in range from (544 - 2400)us. That is from 0 to 180 degrees. This is much faster than servo.write(0 - 180)
+  //servo.writeMicroseconds(ppm.getServo_us(1)); // write in range from (544 - 2400)us -> (0 - 180)deg. This is much faster than servo.write(0 - 180)
   servo.writeMicroseconds(ppm.get(1));          // write raw PPM value to servo (1000 - 2000)us
   analogWrite(LED, ppm.getPWM(3));             // write PWM value from channel 3 to led
 }
