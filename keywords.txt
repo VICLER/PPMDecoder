@@ -12,6 +12,7 @@ ppm     KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
-begin   KEYWORD2
-get     KEYWORD2
-getPWM  KEYWORD2
+begin       KEYWORD2
+get         KEYWORD2
+getPWM      KEYWORD2
+getServo_us KEYWORD2
