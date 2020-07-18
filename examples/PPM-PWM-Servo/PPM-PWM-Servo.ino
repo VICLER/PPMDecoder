@@ -9,7 +9,7 @@
 Servo servo;
 
 void setup() {
-  ppm.begin(PPM_PIN);
+  ppm.begin(PPM_PIN, CHANNELS);
   pinMode(LED, OUTPUT);
   servo.attach(SERVO_PIN);
   Serial.begin(115200);

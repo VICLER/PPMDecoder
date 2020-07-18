@@ -12,11 +12,12 @@ ISR(TIMER2_OVF_vect)
 	ppm.increment_ovf_count();
 }
 
-void PPM::begin(uint8_t inputPort) // set upt the interrrupt to get receive
+void PPM::begin(uint8_t inputPort, uint8_t max_channels = MAX_CHANNELS)
 {
 	pinMode(inputPort, INPUT);
 	attachInterrupt(digitalPinToInterrupt(inputPort), ISR_PPM, FALLING);
-	for (uint8_t i = 0; i < MAX_CHANNEL_NUM; i++)
+	_max_channels = max_channels; 
+	for (uint8_t i = 0; i < MAX_CHANNELS; i++)
 		_channels[i] = 0;
 
 	_ovf_count = 0;
@@ -56,7 +57,7 @@ void PPM::increment_ovf_count()
 
 void PPM::process()
 {
-	static uint8_t _channel_index = MAX_CHANNEL_NUM;
+	static uint8_t _channel_index = _max_channels;
 	static uint32_t _lastTime = 0, _currentTime = 0;
 
 	_currentTime = _micros();
@@ -72,7 +73,7 @@ void PPM::process()
 	else if (pulse_us > 12000)
 		_available = false;
 
-	if (_channel_index < MAX_CHANNEL_NUM)
+	if (_channel_index < _max_channels)
 		_channels[_channel_index++] = constrain(pulse_us, MIN_PULSE, MAX_PULSE);
 }
 

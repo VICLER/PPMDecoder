@@ -12,7 +12,7 @@
 ## How to use
 ```C++
 #include<PPM.h>                       // include library
-ppm.begin(PPM_PIN);                  // init in void setup() // works only with pin 2(PD2) or pin 3(PD3)
+ppm.begin(PPM_PIN, MAX_CHANNELS);    // init in void setup() // works only with pin 2(PD2) or pin 3(PD3)
 ppm.get(CHANNEL_NUMBER);            // get channel value in us 
 ppm.getPWM(CHANNEL_NUMBER);        // get pwm (0-255) channel value
 ppm.getServo_us(CHANNEL_NUMBER);  // get Servo value (0-180)deg for using with Servo.writeMicroseconds() in range (544-2400)us
