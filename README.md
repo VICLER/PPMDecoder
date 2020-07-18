@@ -12,7 +12,10 @@
 ## How to use
 ```C++
 #include<PPM.h>                        // include library
+```
+```C++
 ppm.begin(PPM_PIN, MAX_CHANNELS);     // init in void setup() // works only with pin 2(PD2) or pin 3(PD3)
+```
 ppm.available();                     // returns 0 if there is no valid pulses from receiver
 ppm.get(CHANNEL_NUMBER);            // get channel value in us 
 ppm.getPWM(CHANNEL_NUMBER);        // get pwm (0-255) channel value
