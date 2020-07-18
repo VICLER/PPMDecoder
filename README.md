@@ -1,7 +1,9 @@
 ![PROJECT_PHOTO](https://github.com/VICLER/PPMDecoder/blob/master/ppm_img.PNG)
-<h3 align="center">PPM Decoder</h3>
-  <p align="center">Arduino library for decoding PPM receiver signal</p>
 
+<h3 align="center">PPM Decoder</h3>
+<p align="center">Arduino library for decoding PPM receiver signal</p>
+
+<!-- FEAUTURES -->
 ## Features
 - Small size and easy to use
 - Non-Blocking operation using interrupts
